@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B249B7CB5B83173B78A4646 /* libPods-Mark_CoreText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B16E2DE5D560AEA53B0515D8 /* libPods-Mark_CoreText.a */; };
 		4DB7347F1DF947A800ED13BA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB7347E1DF947A800ED13BA /* main.m */; };
 		4DB734821DF947A800ED13BA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB734811DF947A800ED13BA /* AppDelegate.m */; };
 		4DB734851DF947A800ED13BA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB734841DF947A800ED13BA /* ViewController.m */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		30DFB85A2E5F94161A237035 /* Pods-Mark_CoreText.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mark_CoreText.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mark_CoreText/Pods-Mark_CoreText.release.xcconfig"; sourceTree = "<group>"; };
 		4DB7347A1DF947A800ED13BA /* Mark_CoreText.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mark_CoreText.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DB7347E1DF947A800ED13BA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4DB734801DF947A800ED13BA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -26,6 +28,8 @@
 		4DB734891DF947A800ED13BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4DB7348C1DF947A800ED13BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4DB7348E1DF947A800ED13BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8CC43146639C9FDEA24B104A /* Pods-Mark_CoreText.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mark_CoreText.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mark_CoreText/Pods-Mark_CoreText.debug.xcconfig"; sourceTree = "<group>"; };
+		B16E2DE5D560AEA53B0515D8 /* libPods-Mark_CoreText.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Mark_CoreText.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +37,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B249B7CB5B83173B78A4646 /* libPods-Mark_CoreText.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2208F17E256C97E2CF95E0CD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B16E2DE5D560AEA53B0515D8 /* libPods-Mark_CoreText.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4DB734711DF947A800ED13BA = {
 			isa = PBXGroup;
 			children = (
 				4DB7347C1DF947A800ED13BA /* Mark_CoreText */,
 				4DB7347B1DF947A800ED13BA /* Products */,
+				EF33AA831D89743B2BFC7737 /* Pods */,
+				2208F17E256C97E2CF95E0CD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,6 +94,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		EF33AA831D89743B2BFC7737 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8CC43146639C9FDEA24B104A /* Pods-Mark_CoreText.debug.xcconfig */,
+				30DFB85A2E5F94161A237035 /* Pods-Mark_CoreText.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -86,9 +110,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4DB734911DF947A800ED13BA /* Build configuration list for PBXNativeTarget "Mark_CoreText" */;
 			buildPhases = (
+				1B381111430CD73C3D546791 /* [CP] Check Pods Manifest.lock */,
 				4DB734761DF947A800ED13BA /* Sources */,
 				4DB734771DF947A800ED13BA /* Frameworks */,
 				4DB734781DF947A800ED13BA /* Resources */,
+				C6FFCB99332F1766541D755F /* [CP] Embed Pods Frameworks */,
+				4801D1DF7F75EBA975052590 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -144,6 +171,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1B381111430CD73C3D546791 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		4801D1DF7F75EBA975052590 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mark_CoreText/Pods-Mark_CoreText-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C6FFCB99332F1766541D755F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mark_CoreText/Pods-Mark_CoreText-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4DB734761DF947A800ED13BA /* Sources */ = {
@@ -268,6 +343,7 @@
 		};
 		4DB734921DF947A800ED13BA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8CC43146639C9FDEA24B104A /* Pods-Mark_CoreText.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Mark_CoreText/Info.plist;
@@ -279,6 +355,7 @@
 		};
 		4DB734931DF947A800ED13BA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 30DFB85A2E5F94161A237035 /* Pods-Mark_CoreText.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Mark_CoreText/Info.plist;

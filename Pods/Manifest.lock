@@ -1,0 +1,23 @@
+PODS:
+  - Masonry (0.6.3)
+  - MJExtension (3.0.7)
+  - SDWebImage (3.7.3):
+    - SDWebImage/Core (= 3.7.3)
+  - SDWebImage/Core (3.7.3)
+  - UIColor-HexString (1.1.0)
+
+DEPENDENCIES:
+  - Masonry
+  - MJExtension
+  - SDWebImage
+  - UIColor-HexString
+
+SPEC CHECKSUMS:
+  Masonry: ff105a956abcd19a618b2028b121cb638d7a8e2f
+  MJExtension: 290cc966f0f849b12b6391a38e296e0004ae8e5e
+  SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
+  UIColor-HexString: f8a5612bd6772fed8db58ee594b42a0b2831750e
+
+PODFILE CHECKSUM: 8679bf29967d7ee90e0e28f3c434b19d405be123
+
+COCOAPODS: 1.2.0.beta.1
