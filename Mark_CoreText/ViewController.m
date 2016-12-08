@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "MJsonModel.h"
 
 @interface ViewController ()
 
@@ -16,6 +17,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    MJsonModel *jsonModel = [MJsonModel jsonModelCreateLocalPath];
+    
     // Do any additional setup after loading the view, typically from a nib.
 }
 

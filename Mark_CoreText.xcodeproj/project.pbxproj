@@ -14,6 +14,9 @@
 		4DB734881DF947A800ED13BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DB734861DF947A800ED13BA /* Main.storyboard */; };
 		4DB7348A1DF947A800ED13BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DB734891DF947A800ED13BA /* Assets.xcassets */; };
 		4DB7348D1DF947A800ED13BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DB7348B1DF947A800ED13BA /* LaunchScreen.storyboard */; };
+		4DB734971DF94B1800ED13BA /* json in Resources */ = {isa = PBXBuildFile; fileRef = 4DB734961DF94B1800ED13BA /* json */; };
+		4DB7349D1DF94B4900ED13BA /* MJsonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB7349C1DF94B4900ED13BA /* MJsonModel.m */; };
+		4DB734A01DF951DF00ED13BA /* MParserConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB7349F1DF951DF00ED13BA /* MParserConfig.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,11 @@
 		4DB734891DF947A800ED13BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4DB7348C1DF947A800ED13BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4DB7348E1DF947A800ED13BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4DB734961DF94B1800ED13BA /* json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = json; sourceTree = "<group>"; };
+		4DB7349B1DF94B4900ED13BA /* MJsonModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJsonModel.h; sourceTree = "<group>"; };
+		4DB7349C1DF94B4900ED13BA /* MJsonModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJsonModel.m; sourceTree = "<group>"; };
+		4DB7349E1DF951DF00ED13BA /* MParserConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MParserConfig.h; sourceTree = "<group>"; };
+		4DB7349F1DF951DF00ED13BA /* MParserConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MParserConfig.m; sourceTree = "<group>"; };
 		8CC43146639C9FDEA24B104A /* Pods-Mark_CoreText.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mark_CoreText.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mark_CoreText/Pods-Mark_CoreText.debug.xcconfig"; sourceTree = "<group>"; };
 		B16E2DE5D560AEA53B0515D8 /* libPods-Mark_CoreText.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Mark_CoreText.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -73,6 +81,9 @@
 		4DB7347C1DF947A800ED13BA /* Mark_CoreText */ = {
 			isa = PBXGroup;
 			children = (
+				4DB734961DF94B1800ED13BA /* json */,
+				4DB734951DF94B0600ED13BA /* CoreText */,
+				4DB734941DF94AFF00ED13BA /* Model */,
 				4DB734801DF947A800ED13BA /* AppDelegate.h */,
 				4DB734811DF947A800ED13BA /* AppDelegate.m */,
 				4DB734831DF947A800ED13BA /* ViewController.h */,
@@ -92,6 +103,24 @@
 				4DB7347E1DF947A800ED13BA /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4DB734941DF94AFF00ED13BA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4DB7349B1DF94B4900ED13BA /* MJsonModel.h */,
+				4DB7349C1DF94B4900ED13BA /* MJsonModel.m */,
+				4DB7349E1DF951DF00ED13BA /* MParserConfig.h */,
+				4DB7349F1DF951DF00ED13BA /* MParserConfig.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		4DB734951DF94B0600ED13BA /* CoreText */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = CoreText;
 			sourceTree = "<group>";
 		};
 		EF33AA831D89743B2BFC7737 /* Pods */ = {
@@ -166,6 +195,7 @@
 			files = (
 				4DB7348D1DF947A800ED13BA /* LaunchScreen.storyboard in Resources */,
 				4DB7348A1DF947A800ED13BA /* Assets.xcassets in Resources */,
+				4DB734971DF94B1800ED13BA /* json in Resources */,
 				4DB734881DF947A800ED13BA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -227,7 +257,9 @@
 			files = (
 				4DB734851DF947A800ED13BA /* ViewController.m in Sources */,
 				4DB734821DF947A800ED13BA /* AppDelegate.m in Sources */,
+				4DB734A01DF951DF00ED13BA /* MParserConfig.m in Sources */,
 				4DB7347F1DF947A800ED13BA /* main.m in Sources */,
+				4DB7349D1DF94B4900ED13BA /* MJsonModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,6 +416,7 @@
 				4DB734931DF947A800ED13BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
