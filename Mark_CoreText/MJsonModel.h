@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import   "MJExtension.h"
 @interface MLinkJsonModel : NSObject
 @property (nonatomic, copy) NSString *ref;
@@ -16,9 +17,10 @@
 
 @interface MImaJsonModel : NSObject
 @property (nonatomic, copy) NSString *ref;
-@property (nonatomic, copy) NSString *pixel;
+@property (nonatomic, strong) NSString *pixel;
 @property (nonatomic, copy) NSString *src;
 @property (nonatomic, copy) NSString *alt;
+@property (nonatomic, assign) CGRect imgRect;
 @end
 
 @interface MJsonModel : NSObject

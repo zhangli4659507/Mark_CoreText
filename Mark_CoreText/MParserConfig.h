@@ -8,6 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import "MJsonModel.h"
+#import <CoreText/CoreText.h>
 @interface MParserConfig : NSObject
-+ (NSAttributedString *)attributeStringWithJsonModel:(MJsonModel *)jsonModel;
+@property (nonatomic, assign) CTFramesetterRef setter;
+@property (nonatomic, strong) NSMutableAttributedString *attString;
+@property (nonatomic, assign) CTFrameRef frameRef;
+@property (nonatomic, strong) NSArray<MImaJsonModel *> *imaModel;
++ (MParserConfig *)attributeStringWithJsonModel:(MJsonModel *)jsonModel withBouns:(CGRect)bounds;
+- (CGFloat)frameSetterHeightWithWidth:(CGFloat)width;
 @end

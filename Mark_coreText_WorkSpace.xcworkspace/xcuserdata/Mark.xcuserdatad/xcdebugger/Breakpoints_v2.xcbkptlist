@@ -4,18 +4,28 @@
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            scope = "0"
+            stopOnStyle = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Mark_CoreText/ViewController.m"
-            timestampString = "502877632.864383"
+            filePath = "Mark_CoreText/MParserConfig.m"
+            timestampString = "505203741.114862"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
-            landmarkName = "-viewDidLoad"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "-fillImageRectWithJsonModel:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

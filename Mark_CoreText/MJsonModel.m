@@ -40,7 +40,7 @@
     _body = body;
     if (body.length > 0) {
         _body = [_body stringByReplacingOccurrencesOfString:@"<p>" withString:@""];
-        _body = [_body stringByReplacingOccurrencesOfString:@"</p>" withString:@""];
+        _body = [_body stringByReplacingOccurrencesOfString:@"</p>" withString:@"\n"];
     }
     
 }

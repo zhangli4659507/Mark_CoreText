@@ -1,14 +1,17 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +19,44 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Duu-z1-Mmu">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b2R-8W-LRt" customClass="MDisplayView">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="375" id="PtJ-zi-4Bi"/>
+                                            <constraint firstAttribute="height" constant="647" id="aLs-Ka-Idk"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="b2R-8W-LRt" firstAttribute="top" secondItem="Duu-z1-Mmu" secondAttribute="top" id="1i5-Nw-JLT"/>
+                                    <constraint firstItem="b2R-8W-LRt" firstAttribute="leading" secondItem="Duu-z1-Mmu" secondAttribute="leading" id="DJl-Q4-eqg"/>
+                                    <constraint firstAttribute="bottom" secondItem="b2R-8W-LRt" secondAttribute="bottom" id="DeC-2e-jTb"/>
+                                    <constraint firstAttribute="trailing" secondItem="b2R-8W-LRt" secondAttribute="trailing" id="bbe-sg-G7b"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.85882352939999995" green="0.85882352939999995" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Duu-z1-Mmu" secondAttribute="trailing" id="86z-Dk-pkY"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Duu-z1-Mmu" secondAttribute="bottom" id="991-RY-mCk"/>
+                            <constraint firstItem="Duu-z1-Mmu" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="ajY-EA-kfG"/>
+                            <constraint firstItem="Duu-z1-Mmu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="vQm-Hd-LWr"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="disPlayView" destination="b2R-8W-LRt" id="gQC-9d-bdq"/>
+                        <outlet property="height" destination="aLs-Ka-Idk" id="r9I-ej-7CO"/>
+                        <outlet property="scrollView" destination="Duu-z1-Mmu" id="PeJ-gw-LFG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="37.331334332833585"/>
         </scene>
     </scenes>
 </document>
