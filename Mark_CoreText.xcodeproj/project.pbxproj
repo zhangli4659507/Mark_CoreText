@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0B249B7CB5B83173B78A4646 /* libPods-Mark_CoreText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B16E2DE5D560AEA53B0515D8 /* libPods-Mark_CoreText.a */; };
+		4D0C70C11E1DDF0B003C4A5A /* MDownLoadImageTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D0C70C01E1DDF0B003C4A5A /* MDownLoadImageTool.m */; };
 		4DA072BA1E03DCF9005B51E4 /* coretext-image-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4DA072B91E03DCF9005B51E4 /* coretext-image-2.jpg */; };
 		4DB7347F1DF947A800ED13BA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB7347E1DF947A800ED13BA /* main.m */; };
 		4DB734821DF947A800ED13BA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB734811DF947A800ED13BA /* AppDelegate.m */; };
@@ -23,6 +24,8 @@
 
 /* Begin PBXFileReference section */
 		30DFB85A2E5F94161A237035 /* Pods-Mark_CoreText.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mark_CoreText.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mark_CoreText/Pods-Mark_CoreText.release.xcconfig"; sourceTree = "<group>"; };
+		4D0C70BF1E1DDF0B003C4A5A /* MDownLoadImageTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDownLoadImageTool.h; sourceTree = "<group>"; };
+		4D0C70C01E1DDF0B003C4A5A /* MDownLoadImageTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDownLoadImageTool.m; sourceTree = "<group>"; };
 		4DA072B91E03DCF9005B51E4 /* coretext-image-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "coretext-image-2.jpg"; sourceTree = "<group>"; };
 		4DB7347A1DF947A800ED13BA /* Mark_CoreText.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mark_CoreText.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DB7347E1DF947A800ED13BA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -120,6 +123,8 @@
 				4DB7349C1DF94B4900ED13BA /* MJsonModel.m */,
 				4DB7349E1DF951DF00ED13BA /* MParserConfig.h */,
 				4DB7349F1DF951DF00ED13BA /* MParserConfig.m */,
+				4D0C70BF1E1DDF0B003C4A5A /* MDownLoadImageTool.h */,
+				4D0C70C01E1DDF0B003C4A5A /* MDownLoadImageTool.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -268,6 +273,7 @@
 				4DB734821DF947A800ED13BA /* AppDelegate.m in Sources */,
 				4DB734A01DF951DF00ED13BA /* MParserConfig.m in Sources */,
 				4DBFF0C21DFAA23D00CADAEB /* MDisplayView.m in Sources */,
+				4D0C70C11E1DDF0B003C4A5A /* MDownLoadImageTool.m in Sources */,
 				4DB7347F1DF947A800ED13BA /* main.m in Sources */,
 				4DB7349D1DF94B4900ED13BA /* MJsonModel.m in Sources */,
 			);

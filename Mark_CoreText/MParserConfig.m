@@ -173,6 +173,7 @@ static void deallocCallBack() {
         NSRange range = [attributrdStr.string rangeOfString:linkModel.ref];
         if (range.location != NSNotFound) {
           NSMutableAttributedString *att = [[NSMutableAttributedString alloc] initWithString:linkModel.title attributes:[self getLinkAttributes]];
+            linkModel.linkRange = range;
             [attributrdStr replaceCharactersInRange:range withAttributedString:att];
         }
     }

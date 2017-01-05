@@ -19,13 +19,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Mark_CoreText/MParserConfig.m"
-            timestampString = "505203741.114862"
+            filePath = "Mark_CoreText/MDownLoadImageTool.m"
+            timestampString = "505277359.006462"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
-            landmarkName = "-fillImageRectWithJsonModel:"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "+downLoadImaWithUrl:finishBlock:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

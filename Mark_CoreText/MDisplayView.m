@@ -10,45 +10,67 @@
 #import <CoreText/CoreText.h>
 #import "SDWebImageDownloader.h"
 
+@interface MDisplayView ()<UIGestureRecognizerDelegate>
+
+@end
+
 @implementation MDisplayView
 
 
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+
+    if (self = [super initWithCoder:aDecoder]) {
+        [self addTapEvevt];
+    }
+    return  self;
+}
+
+- (void)addTapEvevt {
+
+    UIGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction:)];
+    tap.delegate  = self;
+    [self addGestureRecognizer:tap];
+    self.userInteractionEnabled = YES;
+}
+
+- (void)tapAction:(UITapGestureRecognizer *)tap {
+    CGPoint point = [tap locationInView:self];
+   for (MImaJsonModel *imaModel in _config.imaModel) {
+       CGRect imaRect = imaModel.imgRect;
+       CGPoint imagePosition = imaRect.origin;
+//       因为底层坐标是反的 所以需要转换
+       imagePosition.y = self.bounds.size.height - imaRect.origin.y - imaRect.size.height;
+       CGRect rect = CGRectMake(imagePosition.x, imagePosition.y, imaRect.size.width, imaRect.size.height);
+       if (CGRectContainsPoint(rect, point)) {
+           NSLog(@"点击了图片");
+       }
+    }
+}
+
 - (void)drawRect:(CGRect)rect {
-    
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSetTextMatrix(context, CGAffineTransformIdentity);
     CGContextTranslateCTM(context, 0, self.bounds.size.height);
     CGContextScaleCTM(context, 1.0, -1.0);
+    
+    [self drawImaRect];
+    
     if (_config.frameRef) {
             CTFrameDraw(_config.frameRef, context);
-    }
-    
-    if (_config.imaModel.count > 0) {
-        [self drawImaWithContext:context];
     }
     // Drawing code
 }
 
-- (void)drawImaWithContext:(CGContextRef)context {
+- (void)drawImaRect {
 
     for (MImaJsonModel *imaModel in _config.imaModel) {
-        [[SDWebImageDownloader sharedDownloader] downloadImageWithURL:[NSURL URLWithString:imaModel.src] options:SDWebImageDownloaderIgnoreCachedResponse progress:nil completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished) {
-            
-            if (image) {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    imaModel.imgRect = CGRectMake(10,imaModel.imgRect.origin.y, CGRectGetWidth(imaModel.imgRect) - 20, CGRectGetHeight(imaModel.imgRect));
-                    CGContextDrawImage(context, imaModel.imgRect, image.CGImage);
-
-                });
-               
-            }
-        }];
+        CGFloat wid = CGRectGetWidth(self.bounds) - 20;
+        imaModel.imgRect = CGRectMake(imaModel.imgRect.origin.x + 10, imaModel.imgRect.origin.y,wid , wid*imaModel.imaScale);
+        [imaModel drawRectWithDisplaySuperView:self];
     }
-    
-   
-    
 }
 
 

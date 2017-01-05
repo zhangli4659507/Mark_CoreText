@@ -7,8 +7,44 @@
 //
 
 #import "MJsonModel.h"
+#import "MDownLoadImageTool.h"
+
+@interface MImaJsonModel ()
+@property (nonatomic, strong) UIImage *image;
+@end
+
 @implementation MImaJsonModel
 
+- (CGFloat)imaScale {
+
+    if (self.pixel && [self.pixel containsString:@"*"]) {
+        CGFloat height =    [[[self.pixel componentsSeparatedByString:@"*"] lastObject] floatValue]/2;
+        CGFloat wid =    [[[self.pixel componentsSeparatedByString:@"*"] firstObject] floatValue]/2;
+        return height/wid;
+    }
+    return 1;
+}
+
+- (void)setDisplaySuperView:(UIView *)displaySuperView {
+    _displaySuperView = displaySuperView;
+    if (_src) {
+        [MDownLoadImageTool downLoadImaWithUrl:self.src finishBlock:^(UIImage *image) {
+            if (image) {
+                _image = image;
+                [self.displaySuperView setNeedsDisplay];
+            }
+        }];
+    }
+}
+
+- (void)drawRectWithDisplaySuperView:(UIView *)dispaySuperView {
+
+    self.displaySuperView = dispaySuperView;
+    if (_image) {
+        CGContextRef context = UIGraphicsGetCurrentContext();
+        CGContextDrawImage(context, self.imgRect, _image.CGImage);
+    }
+}
 
 @end
 
