@@ -49,9 +49,58 @@
         //获取图片的绘制位置
         [config fillImageRectWithJsonModel:jsonModel];
         
-        config.imaModel = jsonModel.img;
+        config.imaModelList = jsonModel.img;
+        config.linkModelList = jsonModel.link;
     }
     return  config;
+}
+
+- (MLinkJsonModel *)touchLinkInview:(UIView *)view atPoint:(CGPoint)point {
+
+    CFArrayRef lines = CTFrameGetLines(_frameRef);
+    if (!lines) return nil;
+    CFIndex count = CFArrayGetCount(lines);
+    CGPoint origins[count];
+    CTFrameGetLineOrigins(_frameRef, CFRangeMake(0, 0), origins);
+    CGAffineTransform transform = CGAffineTransformMakeTranslation(0, view.bounds.size.height);
+    transform = CGAffineTransformScale(transform, 1.f, -1.f);
+    
+    for (int i = 0; i < count; i++) {
+        CGPoint linePoint = origins[i];
+        CTLineRef line = CFArrayGetValueAtIndex(lines, i);
+        //获取到每个line的rect
+        CGRect flippedRect  = [self getLineBounds:line point:linePoint];
+        CGRect rect = CGRectApplyAffineTransform(flippedRect, transform);
+        if (CGRectContainsPoint(rect, point)) {
+            CGPoint relativePoint = CGPointMake(point.x - CGRectGetMinX(rect), point.y - CGRectGetMinY(rect));
+            CFIndex idx = CTLineGetStringIndexForPosition(line, relativePoint);
+            MLinkJsonModel *linkModel = [self linkAtIndex:idx];
+            return linkModel;
+        }
+    }
+    return nil;
+}
+
+- (MLinkJsonModel *)linkAtIndex:(CFIndex)index {
+
+    MLinkJsonModel *selectLinkModel = nil;
+    for (MLinkJsonModel *linkModel in self.linkModelList) {
+        if (NSLocationInRange(index, linkModel.linkRange)) {
+            selectLinkModel = linkModel;
+            break;
+        }
+    }
+    return selectLinkModel;
+}
+
+- (CGRect)getLineBounds:(CTLineRef)line point:(CGPoint)point {
+
+    CGFloat ascent = 0.0f;
+    CGFloat desecnt = 0.0f;
+    CGFloat leading = 0.0f;
+    CGFloat width = (CGFloat)CTLineGetTypographicBounds(line, &ascent, &desecnt, &leading);
+    CGFloat height = ascent + desecnt;
+    return CGRectMake(point.x, point.y - desecnt, width, height);
 }
 
 - (void)fillImageRectWithJsonModel:(MJsonModel *)jsonModel {

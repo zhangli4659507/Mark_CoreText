@@ -38,7 +38,7 @@
 
 - (void)tapAction:(UITapGestureRecognizer *)tap {
     CGPoint point = [tap locationInView:self];
-   for (MImaJsonModel *imaModel in _config.imaModel) {
+   for (MImaJsonModel *imaModel in _config.imaModelList) {
        CGRect imaRect = imaModel.imgRect;
        CGPoint imagePosition = imaRect.origin;
 //       因为底层坐标是反的 所以需要转换
@@ -48,6 +48,13 @@
            NSLog(@"点击了图片");
        }
     }
+    
+    
+    MLinkJsonModel *linkModel = [_config touchLinkInview:self atPoint:point];
+    if (linkModel) {
+        NSLog(@"点击了链接");
+    }
+    
 }
 
 - (void)drawRect:(CGRect)rect {
@@ -66,7 +73,7 @@
 
 - (void)drawImaRect {
 
-    for (MImaJsonModel *imaModel in _config.imaModel) {
+    for (MImaJsonModel *imaModel in _config.imaModelList) {
         CGFloat wid = CGRectGetWidth(self.bounds) - 20;
         imaModel.imgRect = CGRectMake(imaModel.imgRect.origin.x + 10, imaModel.imgRect.origin.y,wid , wid*imaModel.imaScale);
         [imaModel drawRectWithDisplaySuperView:self];

@@ -13,7 +13,9 @@
 @property (nonatomic, assign) CTFramesetterRef setter;
 @property (nonatomic, strong) NSMutableAttributedString *attString;
 @property (nonatomic, assign) CTFrameRef frameRef;
-@property (nonatomic, strong) NSArray<MImaJsonModel *> *imaModel;
+@property (nonatomic, strong) NSArray<MImaJsonModel *> *imaModelList;
+@property (nonatomic, strong) NSArray<MLinkJsonModel *> *linkModelList;
 + (MParserConfig *)attributeStringWithJsonModel:(MJsonModel *)jsonModel withBouns:(CGRect)bounds;
+- (MLinkJsonModel *)touchLinkInview:(UIView *)view atPoint:(CGPoint)pointt;
 - (CGFloat)frameSetterHeightWithWidth:(CGFloat)width;
 @end
