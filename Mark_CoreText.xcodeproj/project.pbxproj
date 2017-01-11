@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		0B249B7CB5B83173B78A4646 /* libPods-Mark_CoreText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B16E2DE5D560AEA53B0515D8 /* libPods-Mark_CoreText.a */; };
 		4D0C70C11E1DDF0B003C4A5A /* MDownLoadImageTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D0C70C01E1DDF0B003C4A5A /* MDownLoadImageTool.m */; };
+		4D1F00631E24AD6900B78FF8 /* MAttributeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D1F00621E24AD6900B78FF8 /* MAttributeLabel.m */; };
+		4D1F00661E24B15000B78FF8 /* NSMutableAttributedString+Mark.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D1F00651E24B15000B78FF8 /* NSMutableAttributedString+Mark.m */; };
+		4D1F00691E24B57E00B78FF8 /* MTextStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D1F00681E24B57E00B78FF8 /* MTextStore.m */; };
+		4D1F006C1E24BA6400B78FF8 /* MLinkStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D1F006B1E24BA6400B78FF8 /* MLinkStore.m */; };
+		4D1F006F1E24BA9000B78FF8 /* MImageStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D1F006E1E24BA9000B78FF8 /* MImageStore.m */; };
+		4D1F00721E24BB4500B78FF8 /* MTextContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D1F00711E24BB4500B78FF8 /* MTextContainer.m */; };
 		4DA072BA1E03DCF9005B51E4 /* coretext-image-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4DA072B91E03DCF9005B51E4 /* coretext-image-2.jpg */; };
 		4DB7347F1DF947A800ED13BA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB7347E1DF947A800ED13BA /* main.m */; };
 		4DB734821DF947A800ED13BA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB734811DF947A800ED13BA /* AppDelegate.m */; };
@@ -26,6 +32,18 @@
 		30DFB85A2E5F94161A237035 /* Pods-Mark_CoreText.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mark_CoreText.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mark_CoreText/Pods-Mark_CoreText.release.xcconfig"; sourceTree = "<group>"; };
 		4D0C70BF1E1DDF0B003C4A5A /* MDownLoadImageTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDownLoadImageTool.h; sourceTree = "<group>"; };
 		4D0C70C01E1DDF0B003C4A5A /* MDownLoadImageTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDownLoadImageTool.m; sourceTree = "<group>"; };
+		4D1F00611E24AD6900B78FF8 /* MAttributeLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAttributeLabel.h; sourceTree = "<group>"; };
+		4D1F00621E24AD6900B78FF8 /* MAttributeLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAttributeLabel.m; sourceTree = "<group>"; };
+		4D1F00641E24B15000B78FF8 /* NSMutableAttributedString+Mark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+Mark.h"; sourceTree = "<group>"; };
+		4D1F00651E24B15000B78FF8 /* NSMutableAttributedString+Mark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableAttributedString+Mark.m"; sourceTree = "<group>"; };
+		4D1F00671E24B57E00B78FF8 /* MTextStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTextStore.h; sourceTree = "<group>"; };
+		4D1F00681E24B57E00B78FF8 /* MTextStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTextStore.m; sourceTree = "<group>"; };
+		4D1F006A1E24BA6400B78FF8 /* MLinkStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLinkStore.h; sourceTree = "<group>"; };
+		4D1F006B1E24BA6400B78FF8 /* MLinkStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLinkStore.m; sourceTree = "<group>"; };
+		4D1F006D1E24BA9000B78FF8 /* MImageStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MImageStore.h; sourceTree = "<group>"; };
+		4D1F006E1E24BA9000B78FF8 /* MImageStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MImageStore.m; sourceTree = "<group>"; };
+		4D1F00701E24BB4500B78FF8 /* MTextContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTextContainer.h; sourceTree = "<group>"; };
+		4D1F00711E24BB4500B78FF8 /* MTextContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTextContainer.m; sourceTree = "<group>"; };
 		4DA072B91E03DCF9005B51E4 /* coretext-image-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "coretext-image-2.jpg"; sourceTree = "<group>"; };
 		4DB7347A1DF947A800ED13BA /* Mark_CoreText.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mark_CoreText.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DB7347E1DF947A800ED13BA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -98,6 +116,18 @@
 				4DB734841DF947A800ED13BA /* ViewController.m */,
 				4DBFF0C01DFAA23D00CADAEB /* MDisplayView.h */,
 				4DBFF0C11DFAA23D00CADAEB /* MDisplayView.m */,
+				4D1F00611E24AD6900B78FF8 /* MAttributeLabel.h */,
+				4D1F00621E24AD6900B78FF8 /* MAttributeLabel.m */,
+				4D1F00671E24B57E00B78FF8 /* MTextStore.h */,
+				4D1F00681E24B57E00B78FF8 /* MTextStore.m */,
+				4D1F006A1E24BA6400B78FF8 /* MLinkStore.h */,
+				4D1F006B1E24BA6400B78FF8 /* MLinkStore.m */,
+				4D1F006D1E24BA9000B78FF8 /* MImageStore.h */,
+				4D1F006E1E24BA9000B78FF8 /* MImageStore.m */,
+				4D1F00701E24BB4500B78FF8 /* MTextContainer.h */,
+				4D1F00711E24BB4500B78FF8 /* MTextContainer.m */,
+				4D1F00641E24B15000B78FF8 /* NSMutableAttributedString+Mark.h */,
+				4D1F00651E24B15000B78FF8 /* NSMutableAttributedString+Mark.m */,
 				4DB734861DF947A800ED13BA /* Main.storyboard */,
 				4DB734891DF947A800ED13BA /* Assets.xcassets */,
 				4DB7348B1DF947A800ED13BA /* LaunchScreen.storyboard */,
@@ -270,11 +300,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DB734851DF947A800ED13BA /* ViewController.m in Sources */,
+				4D1F006F1E24BA9000B78FF8 /* MImageStore.m in Sources */,
 				4DB734821DF947A800ED13BA /* AppDelegate.m in Sources */,
 				4DB734A01DF951DF00ED13BA /* MParserConfig.m in Sources */,
 				4DBFF0C21DFAA23D00CADAEB /* MDisplayView.m in Sources */,
 				4D0C70C11E1DDF0B003C4A5A /* MDownLoadImageTool.m in Sources */,
+				4D1F00631E24AD6900B78FF8 /* MAttributeLabel.m in Sources */,
+				4D1F00691E24B57E00B78FF8 /* MTextStore.m in Sources */,
 				4DB7347F1DF947A800ED13BA /* main.m in Sources */,
+				4D1F00661E24B15000B78FF8 /* NSMutableAttributedString+Mark.m in Sources */,
+				4D1F006C1E24BA6400B78FF8 /* MLinkStore.m in Sources */,
+				4D1F00721E24BB4500B78FF8 /* MTextContainer.m in Sources */,
 				4DB7349D1DF94B4900ED13BA /* MJsonModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

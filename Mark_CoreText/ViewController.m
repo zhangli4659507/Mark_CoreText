@@ -11,8 +11,10 @@
 #import "MParserConfig.h"
 #import "MDisplayView.h"
 #import <CoreText/CoreText.h>
+#import "MAttributeLabel.h"
 @interface ViewController ()
-@property (weak, nonatomic) IBOutlet MDisplayView *disPlayView;
+@property (weak, nonatomic) IBOutlet MAttributeLabel *attLabel;
+
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *height;
 
@@ -22,11 +24,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    MJsonModel *jsonModel = [MJsonModel jsonModelCreateLocalPath];
+    [_attLabel appendText:@"hello world"];
+    UIImage *image = [UIImage imageNamed:@"coretext-image-2.jpg"];
+    [_attLabel appendImageWithImage:image size:image.size];
     
-    MParserConfig *config = [MParserConfig attributeStringWithJsonModel:jsonModel withBouns:_disPlayView.bounds];
-    _disPlayView.config = config;
-    self.height.constant = [config frameSetterHeightWithWidth:CGRectGetWidth(self.disPlayView.bounds)];;
+    
     [self.view setNeedsLayout];
     
     // Do any additional setup after loading the view, typically from a nib.

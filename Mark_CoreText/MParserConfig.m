@@ -11,32 +11,7 @@
 #import <UIColor+HexString.h>
 #import <CoreText/CoreText.h>
 @implementation MParserConfig
-
-- (CGFloat)frameSetterHeightWithWidth:(CGFloat)width {
-
-    CGSize size = CGSizeZero;
-    if (_attString.length > 0 && _setter) {
-     size = CTFramesetterSuggestFrameSizeWithConstraints(self.setter, CFRangeMake(0, self.attString.length), NULL, CGSizeMake(width, CGFLOAT_MAX), NULL);
-    }
-    return size.height;
-}
-
-- (void)createFrameSetterAndFrameWithBounds:(CGRect)rect {
-    
-    if (_attString.length == 0) {
-        return;
-    }
-    CTFramesetterRef setter = CTFramesetterCreateWithAttributedString((CFAttributedStringRef)self.attString);
-    _setter = setter;
-    rect = CGRectMake(rect.origin.x, rect.origin.y, rect.size.width, 1009);
-    CGMutablePathRef path = CGPathCreateMutable();
-    CGPathAddRect(path, NULL, rect);
-    CTFrameRef frameRef = CTFramesetterCreateFrame(setter, CFRangeMake(0, self.attString.length), path, nil);
-    _frameRef = frameRef;
-    CFRelease(path);
-    
-}
-
+#pragma mark - publicFunc
 + (MParserConfig *)attributeStringWithJsonModel:(MJsonModel *)jsonModel withBouns:(CGRect)bounds {
     NSMutableAttributedString *attributedStr;
     MParserConfig *config = [[MParserConfig alloc] init];
@@ -55,8 +30,17 @@
     return  config;
 }
 
-- (MLinkJsonModel *)touchLinkInview:(UIView *)view atPoint:(CGPoint)point {
+- (CGFloat)frameSetterHeightWithWidth:(CGFloat)width {
 
+    CGSize size = CGSizeZero;
+    if (_attString.length > 0 && _setter) {
+     size = CTFramesetterSuggestFrameSizeWithConstraints(self.setter, CFRangeMake(0, self.attString.length), NULL, CGSizeMake(width, CGFLOAT_MAX), NULL);
+    }
+    return size.height;
+}
+
+- (MLinkJsonModel *)touchLinkInview:(UIView *)view atPoint:(CGPoint)point {
+    
     CFArrayRef lines = CTFrameGetLines(_frameRef);
     if (!lines) return nil;
     CFIndex count = CFArrayGetCount(lines);
@@ -72,13 +56,33 @@
         CGRect flippedRect  = [self getLineBounds:line point:linePoint];
         CGRect rect = CGRectApplyAffineTransform(flippedRect, transform);
         if (CGRectContainsPoint(rect, point)) {
+            //将点击的坐标转换成相对于当前行的坐标
             CGPoint relativePoint = CGPointMake(point.x - CGRectGetMinX(rect), point.y - CGRectGetMinY(rect));
+            //获得当前点击坐标对应的字符串偏移
             CFIndex idx = CTLineGetStringIndexForPosition(line, relativePoint);
+            //判断这个偏移是否在我们的链接列表中
             MLinkJsonModel *linkModel = [self linkAtIndex:idx];
             return linkModel;
         }
     }
     return nil;
+}
+
+#pragma mark - privateFunc
+- (void)createFrameSetterAndFrameWithBounds:(CGRect)rect {
+    
+    if (_attString.length == 0) {
+        return;
+    }
+    CTFramesetterRef setter = CTFramesetterCreateWithAttributedString((CFAttributedStringRef)self.attString);
+    _setter = setter;
+    rect = CGRectMake(rect.origin.x, rect.origin.y, rect.size.width, 1009);
+    CGMutablePathRef path = CGPathCreateMutable();
+    CGPathAddRect(path, NULL, rect);
+    CTFrameRef frameRef = CTFramesetterCreateFrame(setter, CFRangeMake(0, self.attString.length), path, nil);
+    _frameRef = frameRef;
+    CFRelease(path);
+    
 }
 
 - (MLinkJsonModel *)linkAtIndex:(CFIndex)index {
@@ -143,9 +147,7 @@
                 imaModel.imgRect = delegateBounds;
             }
         }
-        
     }
-    
 }
 
 #pragma mark - privateFunc
@@ -187,7 +189,6 @@ static CGFloat widthCallBack(void *ref) {
 
 static void deallocCallBack() {
 
-    
 }
 
 + (void)cinfigImgWithAttributrStr:(NSMutableAttributedString *)attributrdStr jsonModel:(MJsonModel *)jsonModel {
@@ -238,6 +239,5 @@ static void deallocCallBack() {
     }
    
 }
-
 
 @end
